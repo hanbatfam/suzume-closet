@@ -7,7 +7,6 @@ import javax.persistence.*;
 @Entity
 @Getter
 public class Follow {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
