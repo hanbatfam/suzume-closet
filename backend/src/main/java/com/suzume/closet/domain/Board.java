@@ -32,4 +32,9 @@ public class Board {
 
     @OneToMany(mappedBy = "board")
     private List<Review> reviewList;
+
+    public void updateBoard(String title, String content) {
+        this.title = title;
+        this.content = content;
+    }
 }
