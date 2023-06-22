@@ -40,4 +40,16 @@ public class User {
 
     @OneToMany(mappedBy = "user")
     private List<UserCoordi> userCoordiList;
+
+    @OneToMany(mappedBy = "user")
+    private List<Board> boardList;
+
+    @OneToMany(mappedBy = "user")
+    private List<UserBoardLikes> userBoardLikesList;
+
+    @OneToMany(mappedBy = "followeruser")
+    private List<UserBoardLikes> followeruserList;
+
+    @OneToMany(mappedBy = "followinguser")
+    private List<UserBoardLikes> followinguserList;
 }
