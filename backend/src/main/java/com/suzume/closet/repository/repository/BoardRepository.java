@@ -7,7 +7,6 @@ import org.springframework.stereotype.Repository;
 import java.util.Optional;
 
 @Repository
-//@RequiredArgsConstructor
 public interface BoardRepository extends JpaRepository<Board, Long> {
     Optional<Board> findById(Long id);
 }
