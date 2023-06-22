@@ -1,4 +1,4 @@
-package com.suzume.closet.repository.repository;
+package com.suzume.closet.repository;
 
 import com.suzume.closet.domain.Board;
 import org.springframework.data.jpa.repository.JpaRepository;
