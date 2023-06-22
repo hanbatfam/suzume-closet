@@ -6,6 +6,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.List;
 
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AllArgsConstructor
@@ -25,4 +26,10 @@ public class Board {
     private String content;
 
     private Long viewcount;
+
+    @OneToMany(mappedBy = "board")
+    private List<UserBoardLikes> userBoardLikesList;
+
+    @OneToMany(mappedBy = "board")
+    private List<Review> reviewList;
 }
