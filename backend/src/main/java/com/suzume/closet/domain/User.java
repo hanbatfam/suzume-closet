@@ -7,6 +7,7 @@ import java.util.List;
 
 @Entity
 @Getter
+@Table(name = "user_table")
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -48,8 +49,8 @@ public class User {
     private List<UserBoardLikes> userBoardLikesList;
 
     @OneToMany(mappedBy = "followeruser")
-    private List<UserBoardLikes> followeruserList;
+    private List<Follow> followeruserList;
 
     @OneToMany(mappedBy = "followinguser")
-    private List<UserBoardLikes> followinguserList;
+    private List<Follow> followinguserList;
 }
