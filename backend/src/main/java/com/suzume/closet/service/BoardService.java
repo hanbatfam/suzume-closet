@@ -33,6 +33,7 @@ public class BoardService {
                 .user(user)
                 .title(requestDto.getTitle())
                 .content(requestDto.getContent())
+                .viewcount(0L)
                 .build();
 
         boardRepository.save(board);
@@ -77,16 +78,16 @@ public class BoardService {
     }
 
     @Transactional
-    public void update(BoardUpdateRequestDto requestDto) {
+    public void updateBoard(BoardUpdateRequestDto requestDto) {
         Board findboard = boardRepository.findById(requestDto.getId()).orElseThrow(
                 () -> new IllegalArgumentException("Not Existing Board")
         );
 
-        findboard.updateBoard(findboard.getTitle(), findboard.getContent());
+        findboard.updateBoard(requestDto.getTitle(), requestDto.getContent());
     }
 
     @Transactional
-    public void delete(long boardId) {
+    public void deleteBoard(long boardId) {
         boardRepository.deleteById(boardId);
     }
 }
