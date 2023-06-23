@@ -18,30 +18,35 @@ public class BoardController {
     @PostMapping("/api/board")
     public ResponseEntity<Void> createBoard(@RequestBody BoardCreationRequestDto requestDto) {
         boardService.createBoard(requestDto);
+
         return ResponseEntity.status(HttpStatus.CREATED).build();
     }
 
     @GetMapping("/api/board")
     public ResponseEntity<BoardListReadResponseDto> readBoardList() {
         BoardListReadResponseDto boardListReadResponseDto = boardService.readBoardList();
+
         return ResponseEntity.ok().body(boardListReadResponseDto);
     }
 
     @GetMapping("/api/board/{boardId}")
     public ResponseEntity<BoardReadResponseDto> readBoard(@PathVariable long boardId) {
         BoardReadResponseDto boardReadResponseDto = boardService.readBoard(boardId);
+
         return ResponseEntity.ok().body(boardReadResponseDto);
     }
 
     @PutMapping("/api/board")
     public ResponseEntity<Void> updateBoard(@RequestBody BoardUpdateRequestDto requestDto) {
         boardService.updateBoard(requestDto);
+
         return ResponseEntity.ok().build();
     }
 
     @DeleteMapping("/api/board/{boardId}")
     public ResponseEntity<Void> deleteBoard(@PathVariable long boardId) {
         boardService.deleteBoard(boardId);
+        
         return ResponseEntity.status(HttpStatus.OK).build();
     }
 }
