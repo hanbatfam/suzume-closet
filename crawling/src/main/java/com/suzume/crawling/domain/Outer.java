@@ -28,7 +28,4 @@ public class Outer {
 
     @OneToMany(mappedBy = "outer")
     private List<Coordi> coordiList;
-
-    @OneToMany(mappedBy = "outer")
-    private List<UserOuter> userOuterList;
 }
