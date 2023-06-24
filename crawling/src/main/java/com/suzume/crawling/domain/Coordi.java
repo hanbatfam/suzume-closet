@@ -1,11 +1,14 @@
 package com.suzume.crawling.domain;
 
-import lombok.Getter;
+import lombok.*;
 
 import javax.persistence.*;
 
 @Entity
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
+@AllArgsConstructor
 @Getter
+@Builder
 public class Coordi {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

@@ -1,12 +1,15 @@
 package com.suzume.crawling.domain;
 
-import lombok.Getter;
+import lombok.*;
 
 import javax.persistence.*;
 import java.util.List;
 
 @Entity
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
+@AllArgsConstructor
 @Getter
+@Builder
 public class Shoes {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
