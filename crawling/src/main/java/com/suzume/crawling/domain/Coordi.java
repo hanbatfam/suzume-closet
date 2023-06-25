@@ -3,6 +3,7 @@ package com.suzume.crawling.domain;
 import lombok.*;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
@@ -14,27 +15,21 @@ public class Coordi {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "top_id")
-    private Top top;
+    private String img;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "pants_id")
-    private Pants pants;
+    private String category;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "shoes_id")
-    private Shoes shoes;
+    private Long price;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "outer_id")
-    private Outer outer;
+    @OneToMany(mappedBy = "coordiId")
+    private List<Outer> outerList;
 
-    private String topCategory;
+    @OneToMany(mappedBy = "coordiId")
+    private List<Top> topList;
 
-    private String pantsCategory;
+    @OneToMany(mappedBy = "coordiId")
+    private List<Pants> pantsList;
 
-    private String shoesCategory;
-
-    private String outerCategory;
+    @OneToMany(mappedBy = "coordiId")
+    private List<Shoes> shoesList;
 }
