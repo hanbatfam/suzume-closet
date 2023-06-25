@@ -1,16 +1,15 @@
 spring:
-  h2:
-    console:
-      enabled: true
   datasource:
-    driver-class-name: org.h2.Driver
-    url: jdbc:h2:tcp://localhost/~/suzumecloset;MODE=MYSQL
-    username: sa
-    password:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/suzumecloset?useSSL=false&serverTimezone=Asia/Seoul&characterEncoding=UTF-8
+    username: root
+    password: ssafy
+
   jpa:
+    open-in-view: true
     hibernate:
       ddl-auto: create
     show-sql: true
     properties:
-      hibernate:
-        format_sql: true
+        hibernate.format_sql: true
+        dialect: org.hibernate.dialect.MySQL8Dialect
