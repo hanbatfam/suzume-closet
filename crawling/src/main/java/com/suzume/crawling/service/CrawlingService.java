@@ -18,7 +18,7 @@ import java.time.Duration;
 @RequiredArgsConstructor
 public class CrawlingService {
     private final CoordiRepository coordiRepository;
-    private final OuterRepository outerRepository;
+    private final OutersRepository outersRepository;
     private final PantsRepository pantsRepository;
     private final ShoesRepository shoesRepository;
     private final TopRepository topRepository;
@@ -249,7 +249,7 @@ public class CrawlingService {
 
                     wholePrice += price;
                 } else if (productInfo.equals("아우터")) {
-                    Outer outer = Outer.builder()
+                    Outers outer = Outers.builder()
                             .coordi(coordi)
                             .brand(brand)
                             .category(category)
@@ -260,7 +260,7 @@ public class CrawlingService {
                             .url(url)
                             .build();
 
-                    outerRepository.save(outer);
+                    outersRepository.save(outer);
 
                     wholePrice += price;
                 }

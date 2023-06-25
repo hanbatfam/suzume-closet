@@ -22,7 +22,7 @@ public class Coordi {
     private Long price;
 
     @OneToMany(mappedBy = "coordi")
-    private List<Outer> outerList;
+    private List<Outers> outersList;
 
     @OneToMany(mappedBy = "coordi")
     private List<Top> topList;

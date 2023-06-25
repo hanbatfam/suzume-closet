@@ -6,7 +6,6 @@ spring:
     password: ssafy
 
   jpa:
-    open-in-view: true
     hibernate:
       ddl-auto: create
     show-sql: true
