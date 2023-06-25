@@ -10,7 +10,7 @@ import java.util.List;
 @AllArgsConstructor
 @Getter
 @Builder
-public class Outer {
+public class Outers {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

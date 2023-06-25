@@ -21,15 +21,19 @@ public class Coordi {
 
     private Long price;
 
-    @OneToMany(mappedBy = "coordiId")
-    private List<Outer> outerList;
+    @OneToMany(mappedBy = "coordi")
+    private List<Outers> outersList;
 
-    @OneToMany(mappedBy = "coordiId")
+    @OneToMany(mappedBy = "coordi")
     private List<Top> topList;
 
-    @OneToMany(mappedBy = "coordiId")
+    @OneToMany(mappedBy = "coordi")
     private List<Pants> pantsList;
 
-    @OneToMany(mappedBy = "coordiId")
+    @OneToMany(mappedBy = "coordi")
     private List<Shoes> shoesList;
+
+    public void updatePrice(Long price) {
+        this.price = price;
+    }
 }
