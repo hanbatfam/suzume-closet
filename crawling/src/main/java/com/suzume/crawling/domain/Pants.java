@@ -15,6 +15,10 @@ public class Pants {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "coordi_id")
+    private Coordi coordi;
+
     private String brand;
 
     private String category;
@@ -28,7 +32,4 @@ public class Pants {
     private String img;
 
     private String url;
-
-    @OneToMany(mappedBy = "pants")
-    private List<Coordi> coordiList;
 }
